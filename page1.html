@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Multiplication</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="style.css">
+	<script>
+		function msgBox (mystring)
+		{
+			alert (mystring)
+		}
+		function DoProduct(mystring1, mystring2)
+		{
+			var answer= mystring1 * mystring2
+			alert(answer)
+		}
+		function GetCrazy(colorchoice) {
+			document.body.style.backgroundColor= colorchoice
+		}
+		
+		
+		function GetPreferences (colortype, colorchoice)
+		{
+			if(colortype=' word'){
+				document.body.style.backgroundColor = colorchoice
+			} else {
+				document.body.style.backgroundColor = '#' +colorchoice
+			}
+		}
+	</script>
+</head>
+<body>
+	<form>
+		<p>Please enter your name:</p>
+		<input name="box1" type="text"/>
+		<input name="submit" type="button" value="Show me" onClick="msgBox(form.box1.value)"/>
+	</form>
+	<p> Simple Math: </p>
+	<form name="form2">
+		<input name="num1" type="text" size="5" /> mutiply by:
+		<input name="num2" type="text" size="5" />
+		<input name="submit2" type="button" value="Mutiply" onClick="DoProduct(form.num1.value,form.num2.value)"/>
+	</form>
+
+	<form name="form5">
+	<h1> More math: </h1>
+		<input name="num3" type="text" size="5" /> 
+			<select>
+ 				<option value="add">Add</option>
+  				<option value="subtract">Subtract</option>
+  				<option value="mutiply">Multiply</option>
+  				<option value="divide">Divide</option>
+			</select>
+		<input name="num4" type="text" size="5" />
+		<input name="submit3" type="button" value="Calculate" onClick="Product(form5.num3.value,form5.num4.value)"/>
+	</form>
+
+	<h1>Color Choices </h1>
+	<form name="form3">
+		<p>Make me: </p>
+		<input type="button" value="Red" onClick="GetCrazy('red')">
+		<input type="button" value="Yellow" onClick="GetCrazy('yellow')">
+		<input type="button" value="Green" onClick="GetCrazy('green')">
+		<input type="button" value="Blue" onClick="GetCrazy('blue')">
+	</form>
+
+	<h1>color picker</h1>
+	<form name="form4">
+	<p> Enter color as name <input name="colortype" type="radio" value="word" onClick="form4.temp.value='word'" /> or Hex <input name="colortype" type="radio" value="hex" onClick="form4.temp.value='hex' "/>
+	</p>
+
+	<p>
+		Color: <input name="colorchoice" type="text" />
+		<input name="submit4" type="button" value="Do It" onClick="GetPreferences(form4.temp.value,form4.colorchoice.value)"/>
+	</p>
+	<input type="hidden" name="temp" value="word"/>
+	</form>
+
+
+</body>
+</html>
